@@ -11,7 +11,7 @@ To get the app working locally:
     ```bash                 
     flaskapp\scripts\activate.bat
     ```
-4. Then run the command `pip install -r requirements.txt`
+4. Then run the command `pip install -r requirements.txt` (In case of error in Windows at this point, you need to set the LongPathsEnabled Registry value to 1. [See here](https://stackoverflow.com/questions/54778630/could-not-install-packages-due-to-an-environmenterror-errno-2-no-such-file-or/55189256#55189256))
 5. Next, set the FLASK_APP variable to app.py and FLASK_ENV to development by running the following command (for windows) 
    ```bash
     set FLASK_APP=app.py
@@ -26,6 +26,10 @@ To get the app working locally:
 # Prerequisites
 
 You will need [Python3 installed](https://www.python.org/downloads/) on your local machine.
+
+# Data Set
+The Twitter US Airline Sentiment [Dataset](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) was used to train and test the Neural Network Model.
+
 
 # Built With
 
