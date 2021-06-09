@@ -27,6 +27,10 @@ To get the app working locally:
 
 You will need [Python3 installed](https://www.python.org/downloads/) on your local machine.
 
+# Data Set
+The Twitter US Airline Sentiment [Dataset](https://www.kaggle.com/crowdflower/twitter-airline-sentiment) was used to train and test the Neural Network Model.
+
+
 # Built With
 
 * [Python](https://www.python.org/) - Programming language
