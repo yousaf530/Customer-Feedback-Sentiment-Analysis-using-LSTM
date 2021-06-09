@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Customer Feedback Analysis</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS File -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css')}}"
+    />
+  </head>
+
+  <body class="home">
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-center align-items-center">
+        <div id="logo">
+          <h1><a href="/">Customer Feedback Analysis</a></h1>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Quote Section ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <div
+            style="
+              border-radius: 20px;
+              background-color: #000000;
+              background-image: linear-gradient(
+                147deg,
+                #000000 0%,
+                #04619f 74%
+              );
+              height: 50px;
+            "
+            class="d-flex justify-content-center align-items-center"
+          >
+            <h2>
+              We all need people who will give us feedback. That’s how we
+              improve – Bill Gates
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section id="main-content">
+        <div class="container-fluid">
+          <div class="row my-4 justify-content-around">
+            <div class="col-md-5 mx-2">
+              <form
+                action="/sentiment_prediction"
+                method="post"
+                enctype="multipart/form-data"
+                class="m-4"
+              >
+                <div class="form-group">
+                  <input
+                    name="text"
+                    class="form-control my-2"
+                    placeholder="Review text goes here"
+                  />
+                  <small class="form-text text-muted"
+                    >Lets see what you've got.</small
+                  >
+                </div>
+
+                <button type="submit" class="btn btn-primary my-2">
+                  Check Sentiment
+                </button>
+              </form>
+            </div>
+
+            <div class="col-md-2 mx-2">
+              <h2 class="aroundtext">Sentiment</h2>
+              <div class="card">
+                <div class="card-body">
+                  {% if probability %}
+                  <h5
+                    style="color: black; text-align: center; font-weight: 500"
+                  >
+                    {{ sentiment }}
+                  </h5>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 mx-2">
+              <h2 class="aroundtext">Probability</h2>
+              <div class="card">
+                <div class="card-body">
+                  {% if probability %}
+                  <h5
+                    style="color: black; text-align: center; font-weight: 500"
+                  >
+                    {{ probability }}
+                  </h5>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-6 ">
+              {% if probability %}
+              <div class="col-md-12 justify-content-center">
+                <div><h1 class="aroundtext">Review</h1></div>
+                <div><p style="text-align:center">{{text}}</p></div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="col-md-6 ms-auto">
+              {% if probability %}
+              <div class="col-md-12 justify-content-center">
+                <div><h1 class="aroundtext">Emotion</h1></div>
+                <div><img src="{{ image }}" alt="Image" class='rounded mx-auto d-block my-3'/></div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

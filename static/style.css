@@ -1,0 +1,101 @@
+body {
+  background: #fff;
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+}
+
+a {
+  color: #2dc997;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: #2dca98;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+
+#header {
+  margin-top: 40px
+}
+
+#header #logo h1 {
+  font-size: 32px;
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.aroundtext{
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.aroundtext {
+  text-align: center;
+  text-transform: uppercase
+}
+
+.home {
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  min-height: 700px;
+  color: white;
+}
+
+/* Section Headers */
+.section-header .section-title {
+  font-size: 32px;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.section-header .section-description {
+  text-align: center;
+  padding-bottom: 40px;
+  color: #999;
+}
+
+/*  Breadcrumbs */
+
+.breadcrumbs {
+  padding: 20px 0;
+  min-height: 40px;
+  margin-top: 20px;
+  margin-bottom:30px
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+}

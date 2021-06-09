@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Customer Feedback Analysis</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+      rel="stylesheet"
+    />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="home">
+
+     <!-- ======= Header ======= -->
+     <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex justify-content-center align-items-center">
+        <div id="logo">
+          <h1><a>Customer Feedback Analysis</a></h1>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Quote Section ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-center align-items-center">
+            <h2>
+              We all need people who will give us feedback. That’s how we
+              improve – Bill Gates
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container ">
+          <div class="row">
+            <!-- <div class="col-md-6 border" >
+          <div class="input-group">
+            <span class="input-group-addon">Enter Text Here</span>
+            <form
+              action="/sentiment_analysis_prediction"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input name="text" class="form-control" placeholder="Text" />
+              <input type="submit" />
+            </form>
+          </div>
+        </div> -->
+
+            <div class="col-md-5 mx-2">
+              <form
+                action="file:///C:/sentiment_analysis_prediction"
+                method="post"
+                enctype="multipart/form-data"
+                class="m-4"
+              >
+                <div class="form-group">
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="Enter Text"
+                  />
+                  <small id="emailHelp" class="form-text text-muted"
+                    >Lets see what you've got.</small
+                  >
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+            <div class="col-md-2 mx-2">
+              <h2 class="aroundtext">Sentiment</h2>
+              <div class="alert alert-primary" role="alert">
+                {% if probability %} {{ sentiment }} {% endif %}
+              </div>
+            </div>
+
+            <div class="col-md-2 mx-2">
+              <h2 class="aroundtext">Probability</h2>
+              <div class="alert alert-primary" role="alert">
+                {% if probability %} {{ probability }} {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <div class="col-sm-6"></div>
+              {% if probability %}
+              <div class="col-sm-2">
+                <h1>Emotion</h1>
+                <img
+                  src="file:///C:/Users/Yousaf/Downloads/Compressed/Regna/%7B%7B%20image%20%7D%7D"
+                  alt="Image"
+                />
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
